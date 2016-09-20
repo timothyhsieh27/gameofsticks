@@ -49,7 +49,7 @@ def main
   game_start
 
   loop do
-    if @stick_number >= 1
+    if @stick_number > 0
       first_turn(first_take)
       second_turn(second_take)
     else
@@ -62,6 +62,21 @@ end
 class Sticks
   def initialize
     @stick_number = stick_number
+  end
+
+  def take_sticks(player_take)
+    loop do
+      puts "There are #{@stick_number} on the board."
+      puts "Player: How many sticks will you take (1-3)?"
+      player_take = gets.chomp.to_i
+      if 1 <= player_take && player_take <= 3
+        @stick_number = @stick_number - second_take
+        puts "There are now #{@stick_number} sticks remaining."
+          break
+      else
+        puts "Invalid input. Please enter a number between 10 and 100: "
+      end
+    end
   end
 end
 
