@@ -1,12 +1,15 @@
-loop do
-  puts "Welcome to the Game of Sticks! Choose how many sticks the table starts with(10-100): "
-  @stick_number = gets.chomp.to_i
-    if 10 <= @stick_number && @stick_number <= 100
-      puts "You will start with #{@stick_number} sticks in the pile."
-      break
-    else
-    puts "Invalid input. Please enter a number between 10 and 100: "
-    end
+
+def game_start
+  loop do
+    puts "Welcome to the Game of Sticks! Choose how many sticks the table starts with(10-100): "
+    @stick_number = gets.chomp.to_i
+      if 10 <= @stick_number && @stick_number <= 100
+        puts "You will start with #{@stick_number} sticks in the pile."
+        break
+      else
+      puts "Invalid input. Please enter a number between 10 and 100: "
+      end
+  end
 end
 
 def first_turn(first_take)
@@ -39,16 +42,27 @@ def second_turn(second_take)
   end
 end
 
-puts "End of game. There are now #{@stick_number} sticks."
+def main
+  first_take =
+  second_take =
 
-first_take =
-second_take =
+  game_start
 
-first_turn(first_take)
-second_turn(second_take)
+  loop do
+    if @stick_number >= 1
+      first_turn(first_take)
+      second_turn(second_take)
+    else
+      puts "Game over! You lose!"
+      break
+    end
+  end
+end
 
 class Sticks
   def initialize
     @stick_number = stick_number
   end
 end
+
+main
