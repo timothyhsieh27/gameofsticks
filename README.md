@@ -1,6 +1,9 @@
 # Game of Sticks
+Initially, the player may enter "1" to initiate player vs. player mode, or "2" for player vs. computer mode.
+After selecting the game mode, the sequence below will run.
 
-The game begins when a player randomly selects a number of sticks between 10 and 100. After the inital number has been set, players alternate turns until one draws the final sticks. The player who empties the pile loses.
+Player vs. Player Mode:
+- The game begins when a player randomly selects a number of sticks between 10 and 100. After the inital number has been set, - players alternate turns until one draws the final sticks. The player who empties the pile loses.
 
 Game Start:
 - In this method, the users are provided with a prompt for an initial number. Upon receiving that number, the game then sets the "pile of sticks" to equal that number.
@@ -16,3 +19,6 @@ Main:
 
 Class:
 - A single instance variable, @stick_number, is used to keep track of the total number of sticks in "the pile" as established by the Game Start method, and as it is modified by the Take Sticks method.
+
+Player vs. Computer:
+- All functionality from the player vs. player mode is maintained. The second player is replaced by an automatic selection by the computer. 
